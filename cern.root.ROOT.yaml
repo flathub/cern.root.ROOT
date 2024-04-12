@@ -21,7 +21,7 @@ modules:
     buildsystem: simple
     build-commands:
       - ./configure --prefix=/app
-      - make -j1
+      - make
       - make install
     sources:
       - type: archive
