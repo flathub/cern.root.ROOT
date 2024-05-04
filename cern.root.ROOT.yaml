@@ -41,7 +41,7 @@ modules:
     buildsystem: simple
     build-commands:
       - ./configure BINDIR=/app/bin/ SHAREDIR=/app/share/scid/
-      - make
+      - export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/app/lib/ && make
       - make install
     sources:
       - type: archive
