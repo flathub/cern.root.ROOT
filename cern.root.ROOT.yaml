@@ -40,7 +40,7 @@ modules:
   - name: scidvspc
     buildsystem: simple
     build-commands:
-      - ./configure --prefix=/app BINDIR=/app/bin SHAREDIR=/app/share/scid
+      - ./configure BINDIR=/app/bin/ SHAREDIR=/app/share/scid/
       - make
       - make install
     sources:
