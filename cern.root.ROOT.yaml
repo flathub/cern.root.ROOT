@@ -38,10 +38,11 @@ modules:
       - ln -s /app/bin/wish8.6 /app/bin/wish
 
   - name: scidvspc
-    buildsystem: autotools
-    config-opts:
-      - BINDIR=/app/bin/ 
-      - SHAREDIR=/app/share/scid/
+    buildsystem: simple
+    build-commands:
+      - ./configure --prefix=/app BINDIR=/app/bin SHAREDIR=/app/share/scid
+      - make
+      - make install
     sources:
       - type: archive
         url: https://prdownloads.sourceforge.net/scidvspc/scid_vs_pc-4.24.tgz
