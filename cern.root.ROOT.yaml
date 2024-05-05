@@ -38,11 +38,13 @@ modules:
       - ln -s /app/bin/wish8.6 /app/bin/wish
 
   - name: scidvspc
-    buildsystem: simple
-    build-commands:
-      - ./configure BINDIR=/app/bin/ SHAREDIR=/app/share/scid/
-      - export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/app/lib/ && make
-      - make install
+    buildsystem: autotools
+    config-opts: 
+      - BINDIR=/app/bin/ 
+      - SHAREDIR=/app/share/scid/
+    build-options:
+      cflags: -00 #-fpermissive -Wno-error=narrowing
+      cxxflags: -00 #-fpermissive -Wno-error=narrowing
     sources:
       - type: archive
         url: https://prdownloads.sourceforge.net/scidvspc/scid_vs_pc-4.24.tgz
