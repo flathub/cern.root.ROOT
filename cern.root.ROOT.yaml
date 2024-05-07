@@ -45,6 +45,8 @@ modules:
     build-options:
       cflags: -00 -fpermissive -Wno-error=narrowing
       cxxflags: -00 -fpermissive -Wno-error=narrowing
+      cxxflags-override: true
+      cflags-override: true
     sources:
       - type: archive
         url: https://prdownloads.sourceforge.net/scidvspc/scid_vs_pc-4.24.tgz
