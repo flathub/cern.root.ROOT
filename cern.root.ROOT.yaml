@@ -43,8 +43,8 @@ modules:
       - BINDIR=/app/bin/ 
       - SHAREDIR=/app/share/scid/
     build-options:
-      cflags: -00 -fpermissive -Wno-error=narrowing
-      cxxflags: -00 -fpermissive -Wno-error=narrowing
+      cflags: -00 -fpermissive -Wno-error=narrowing -pipe
+      cxxflags: -00 -fpermissive -Wno-error=narrowing -pipe
       cxxflags-override: true
       cflags-override: true
     sources:
