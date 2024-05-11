@@ -17,6 +17,9 @@ finish-args:
   - --env=PYTHONPATH=/app/lib
   - --env=ROOTSYS=/app
 modules:
+  - name: bbbbb
+    build-commands: 
+      - find /usr -name "libX11*"
   - name: tcl
     sources:
       - type: archive
