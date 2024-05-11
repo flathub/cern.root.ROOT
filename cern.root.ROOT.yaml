@@ -18,6 +18,7 @@ finish-args:
   - --env=ROOTSYS=/app
 modules:
   - name: bbbbb
+    buildsystem: simple
     build-commands: 
       - find /usr -name "libX11*"
     sources: 
