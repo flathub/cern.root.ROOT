@@ -20,6 +20,11 @@ modules:
   - name: bbbbb
     build-commands: 
       - find /usr -name "libX11*"
+    sources: 
+      - type: script
+        commands:
+          - processed=`sed -e 's/--/-/g ; s/=/ /g' <<< $@`
+        dest-filename: configure
   - name: tcl
     sources:
       - type: archive
