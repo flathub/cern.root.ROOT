@@ -17,15 +17,6 @@ finish-args:
   - --env=PYTHONPATH=/app/lib
   - --env=ROOTSYS=/app
 modules:
-  - name: bbbbb
-    buildsystem: simple
-    build-commands: 
-      - find /usr -name "libX11*"
-    sources: 
-      - type: script
-        commands:
-          - processed=`sed -e 's/--/-/g ; s/=/ /g' <<< $@`
-        dest-filename: configure
   - name: tcl
     sources:
       - type: archive
@@ -52,14 +43,16 @@ modules:
       - BINDIR=/app/bin/ 
       - SHAREDIR=/app/share/scid/
     build-options:
-      cflags: -00 -fpermissive -Wno-error=narrowing -pipe
-      cxxflags: -00 -fpermissive -Wno-error=narrowing -pipe
+      cflags: -pipe
+      cxxflags: -pipe
       cxxflags-override: true
       cflags-override: true
     sources:
       - type: archive
         url: https://prdownloads.sourceforge.net/scidvspc/scid_vs_pc-4.24.tgz
         sha256: c782e39f5bda5ebb9ed7a914a1f5801f6b033580bc87736fcc58df7d1a341210
+      - type: patch
+        path: configure.patch
   - name: root
     buildsystem: cmake-ninja
     builddir: true
