@@ -53,6 +53,8 @@ modules:
         sha256: c782e39f5bda5ebb9ed7a914a1f5801f6b033580bc87736fcc58df7d1a341210
       - type: patch
         path: configure.patch
+      - type: patch
+        path: search.cpp.patch
   - name: root
     buildsystem: simple
     build-commands:
