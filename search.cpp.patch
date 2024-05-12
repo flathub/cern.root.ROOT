@@ -1,0 +1,29 @@
+--- a/engines/toga/src/search.cpp	2010-04-21 02:29:49.000000000 -0500
++++ b/engines/toga/src/search.cpp	2024-05-11 22:38:18.189556223 -0500
+@@ -448,9 +448,9 @@
+ 
+ void search_update_root() {
+ 
+-   int move, move_pos, move_nb;
+-   double time;
+-   sint64 node_nb;
++   int move, move_pos;// move_nb;
++   //double time;
++   //sint64 node_nb;
+    char move_string[256];
+ 
+    if (DispRoot) {
+@@ -461,10 +461,10 @@
+ 
+          move = SearchRoot->move;
+          move_pos = SearchRoot->move_pos;
+-         move_nb = SearchRoot->move_nb;
++         // move_nb = SearchRoot->move_nb;
+ 
+-         time = SearchCurrent->time;
+-         node_nb = SearchCurrent->node_nb;
++         //time = SearchCurrent->time;
++         //node_nb = SearchCurrent->node_nb;
+ 
+          move_to_string(move,move_string,256);
+ 
