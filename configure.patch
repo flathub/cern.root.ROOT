@@ -19,7 +19,7 @@
 -        } else {
 -            set var(FONTDIR) $prefix/share/fonts/truetype/Scid
 -        }
-+        set var(FONTDIR) "~/.fonts"
++        set var(FONTDIR) "/app/share/fonts"
 +        
      }
  
