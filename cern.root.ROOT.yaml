@@ -43,11 +43,11 @@ modules:
       - BINDIR=/app/bin/ 
       - SHAREDIR=/app/share/scid/
       - --prefix=/usr
-    # build-options:
-     # cflags: "" # -fpermissive -Wno-error=narrowing -pipe
-    #  cxxflags: "" # -fpermissive -Wno-error=narrowing -pipe
-     # cxxflags-override: true
-    #  cflags-override: true
+    build-options:
+      cflags: "" # -fpermissive -Wno-error=narrowing -pipe
+      cxxflags: "" # -fpermissive -Wno-error=narrowing -pipe
+      cxxflags-override: true
+      cflags-override: true
     sources:
       - type: archive
         url: https://prdownloads.sourceforge.net/scidvspc/scid_vs_pc-4.24.tgz
