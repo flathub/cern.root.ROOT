@@ -48,6 +48,9 @@ modules:
       cxxflags: -fpermissive -Wno-error=narrowing # -pipe
       # cxxflags-override: true
       # cflags-override: true
+      build-args:
+      - "--disable-silent-rules"
+      - "MAKEFLAGS=-j8 -l4"
     sources:
       - type: archive
         url: https://prdownloads.sourceforge.net/scidvspc/scid_vs_pc-4.24.tgz
