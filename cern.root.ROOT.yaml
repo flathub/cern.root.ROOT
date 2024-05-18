@@ -43,10 +43,9 @@ modules:
       - BINDIR=/app/bin/ 
       - SHAREDIR=/app/share/scid/
       - --prefix=/usr
-    build-args:
-      - "--disable-silent-rules"
-      - "MAKEFLAGS=-j8 -l4"
     build-options:
+      make-args:
+        - "-j1"
       cflags: -fpermissive -Wno-error=narrowing # -pipe
       cxxflags: -fpermissive -Wno-error=narrowing # -pipe
       # cxxflags-override: true
