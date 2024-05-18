@@ -24,8 +24,8 @@ modules:
       - make
       - make install
     build-options:
-      cflags: -fpermissive -Wno-error=narrowing # -pipe
-      cxxflags: -fpermissive -Wno-error=narrowing # -pipe
+      cflags: "" #-fpermissive -Wno-error=narrowing # -pipe
+      cxxflags: "" # -fpermissive -Wno-error=narrowing # -pipe
       cxxflags-override: true
       cflags-override: true
     sources:
