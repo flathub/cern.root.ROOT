@@ -21,7 +21,7 @@ modules:
     buildsystem: simple
     build-commands:
       - ./configure --prefix=/app
-      - make
+      - make -j $FLATPAK_BUILDER_N_JOBS
       - make install
     build-options:
       cflags: "" #-fpermissive -Wno-error=narrowing # -pipe
