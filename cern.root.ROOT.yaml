@@ -18,11 +18,12 @@ finish-args:
   - --env=ROOTSYS=/app
 modules:
   - name: gcl
-    buildsystem: simple
-    build-commands:
-      - ./configure --prefix=/app
-      - make -j $FLATPAK_BUILDER_N_JOBS
-      - make install
+    buildsystem: autotools
+    # build-commands:
+     # - ./configure --prefix=/app
+     # - make -j $FLATPAK_BUILDER_N_JOBS
+     # - make install
+    no-parallel-make: true
     build-options:
       cflags: "" #-fpermissive -Wno-error=narrowing # -pipe
       cxxflags: "" # -fpermissive -Wno-error=narrowing # -pipe
