@@ -43,14 +43,14 @@ modules:
       - BINDIR=/app/bin/ 
       - SHAREDIR=/app/share/scid/
       - --prefix=/usr
+    build-args:
+      - "--disable-silent-rules"
+      - "MAKEFLAGS=-j8 -l4"
     build-options:
       cflags: -fpermissive -Wno-error=narrowing # -pipe
       cxxflags: -fpermissive -Wno-error=narrowing # -pipe
       # cxxflags-override: true
       # cflags-override: true
-      build-args:
-      - "--disable-silent-rules"
-      - "MAKEFLAGS=-j8 -l4"
     sources:
       - type: archive
         url: https://prdownloads.sourceforge.net/scidvspc/scid_vs_pc-4.24.tgz
