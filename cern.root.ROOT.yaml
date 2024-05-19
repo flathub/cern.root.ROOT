@@ -19,16 +19,12 @@ finish-args:
 modules:
   - name: gcl
     buildsystem: autotools
-    # build-commands:
-     # - ./configure --prefix=/app
-     # - make -j $FLATPAK_BUILDER_N_JOBS
-     # - make install
     no-parallel-make: true
     build-options:
       cflags: "" #-fpermissive -Wno-error=narrowing # -pipe
       cxxflags: "" # -fpermissive -Wno-error=narrowing # -pipe
-      cxxflags-override: true
-      cflags-override: true
+      # cxxflags-override: true
+     # cflags-override: true
     sources:
       - type: archive
         url: http://mirrors.tripadvisor.com/gnu/gcl/gcl-2.6.14.tar.gz
