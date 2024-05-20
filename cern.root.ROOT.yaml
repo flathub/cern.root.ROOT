@@ -21,10 +21,10 @@ modules:
     buildsystem: autotools
     no-parallel-make: true
     build-options:
-      cflags: "" #-fpermissive -Wno-error=narrowing # -pipe
-      cxxflags: "" # -fpermissive -Wno-error=narrowing # -pipe
-      # cxxflags-override: true
-     # cflags-override: true
+      cflags: "-O2 -pipe -g -fexceptions -fstack-protector-strong -grecord-gcc-switches -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -fno-omit-frame-pointer"
+      cxxflags: "-O2 -pipe -g -fexceptions -fstack-protector-strong -grecord-gcc-switches -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -fno-omit-frame-pointer" 
+      cxxflags-override: true
+      cflags-override: true
     sources:
       - type: archive
         url: http://mirrors.tripadvisor.com/gnu/gcl/gcl-2.6.14.tar.gz
