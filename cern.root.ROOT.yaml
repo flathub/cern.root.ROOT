@@ -19,7 +19,7 @@ finish-args:
 
 build-options:
   env:
-    ASPELL_CONF: "dict-dir /app/share/dicts;data-dir /app/share/datadicts"
+    ASPELL_CONF: "dict-dir /app/share/dicts;data-dir /app/share/dicts"
     
 modules:
   - name: dictEs-aspell
