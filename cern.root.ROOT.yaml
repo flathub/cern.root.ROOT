@@ -16,7 +16,32 @@ finish-args:
   - --env=JUPYTER_PATH=/app/etc/notebook
   - --env=PYTHONPATH=/app/lib
   - --env=ROOTSYS=/app
+
+build-options:
+  env:
+    ASPELL_CONF: "dict-dir /app/share/dicts;data-dir /app/share/datadicts"
+    
 modules:
+  - name: dictEs-aspell
+    buildsystem: simple
+    build-commands:
+      - ./configure
+      - make
+      - make install
+    sources:
+      - type: archive
+        url: https://ftp.gnu.org/gnu/aspell/dict/es/aspell6-es-1.11-2.tar.bz2
+        sha256: ad367fa1e7069c72eb7ae37e4d39c30a44d32a6aa73cedccbd0d06a69018afcc
+  - name: dictEn-aspell
+    buildsystem: simple
+    build-commands:
+      - ./configure
+      - make
+      - make install
+    sources:
+      - type: archive
+        url: https://ftp.gnu.org/gnu/aspell/dict/en/aspell6-en-2020.12.07-0.tar.bz2
+        sha256: 4c8f734a28a088b88bb6481fcf972d0b2c3dc8da944f7673283ce487eac49fb3
   - name: root
     buildsystem: cmake-ninja
     builddir: true
