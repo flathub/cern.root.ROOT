@@ -7,16 +7,16 @@
     <summary>Data Analysis Framework</summary>
     <description>
 	<p>
+	   Note: This package only contains root, to use other utilities 
+	   look in the manifest repository.
+	</p>
+	<p>
 	    ROOT is a framework for data processing, developed at CERN,
             the epicenter of high-energy physics research. It can handle 
             extensive data using the mathematical and statistical methods 
             it provides, along with user-developed routines. The results 
             can be visually presented according to specific needs and 
             exported to various formats such as PDF, PS, PNG, etc.
-	</p>
-	<p>
-	   Note: This package only contains root, to use other utilities 
-	   look in the manifest repository.
 	</p>
     </description>
     <screenshots>
