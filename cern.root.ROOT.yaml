@@ -16,6 +16,7 @@ finish-args:
   - --env=JUPYTER_PATH=/app/etc/notebook
   - --env=PYTHONPATH=/app/lib
   - --env=ROOTSYS=/app
+  - --env=PATH=/var/data/python/bin:/app/bin:/usr/bin
 modules:
   - name: root
     buildsystem: cmake-ninja
@@ -28,8 +29,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/root-project/root.git
-        tag: v6-32-04
-        commit: 695ada6463caa478ca6be226999895c27f673ee8
+        tag: v6-32-06
+        commit: 5380676d1f0ed3055048f305de917572f976a090
       - type: file
         path: cern.root.ROOT.appdata.xml
 
