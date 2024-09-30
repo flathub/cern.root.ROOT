@@ -16,18 +16,17 @@ finish-args:
   - --env=JUPYTER_PATH=/app/etc/notebook
   - --env=PYTHONPATH=/app/lib
   - --env=ROOTSYS=/app
-  - --env=C_INCLUDE_PATH=/app/include
-  - --env=CPLUS_INCLUDE_PATH=/app/include:/app/include/c++/13.2.0:/app/include/c++/13.2.0/x86_64-unknown-linux-gnu
 modules:
   - name: root
     buildsystem: cmake-ninja
     builddir: true
+    config-opts:
+      - -Dccache=ON
     post-install:
       - install -Dm644 ../icons/Root6Icon.png /app/share/icons/hicolor/128x128/apps/Root6Icon.png
       - install -Dm644 ../cern.root.ROOT.appdata.xml /app/share/appdata/cern.root.ROOT.appdata.xml
       - install -Dm644 ../etc/root.desktop /app/share/applications/root.desktop
       - desktop-file-edit --set-key=Icon --set-value="Root6Icon" "${FLATPAK_DEST}/share/applications/root.desktop"
-      - cp -r /usr/include/* /app/include/ 
     sources:
       - type: git
         url: https://github.com/root-project/root.git
