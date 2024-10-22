@@ -8,7 +8,8 @@
     <description>
 	<p>
 	   Note: This package only contains root, to use other utilities 
-	   look in the manifest repository.
+	   look in the manifest repository https://github.com/flathub/cern.root.ROOT. 
+	   The beta branch contains ROOT with SDK version 24.08.
 	</p>
 	<p>
 	    ROOT is a framework for data processing, developed at CERN,
@@ -24,7 +25,7 @@
           <image>https://root.cern/primer/fitted2dFunction.png</image>
         </screenshot>
         <screenshot>
-          <image>https://root.cern/doc/master/eve_aliceproj.png</image>
+          <image>https://bztd.github.io/Flathub/ROOT/notebook.png</image>
         </screenshot>
         <screenshot>
           <image>https://root.cern/primer/examplefit.png</image>
@@ -35,7 +36,7 @@
     </screenshots>
     <categories>
         <category>Science</category>
-        <category>Education</category>
+        <category>Development</category>
     </categories>
     <update_contact>sixpalax_at_gmail.com</update_contact>
     <url type="bugtracker">https://github.com/root-project/root/issues</url>
