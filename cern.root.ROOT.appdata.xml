@@ -20,6 +20,7 @@
             exported to various formats such as PDF, PS, PNG, etc.
 	</p>
     </description>
+    <icon type="stock">Root6Icon</icon>
     <screenshots>
         <screenshot type="default">
           <image>https://root.cern/primer/fitted2dFunction.png</image>
