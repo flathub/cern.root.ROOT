@@ -18,14 +18,6 @@ finish-args:
   - --env=ROOTSYS=/app
   - --env=PATH=/var/data/python/bin:/app/bin:/usr/bin
 modules:
-  - name: giac
-    buildsystem: autotools
-    make-args:
-      - -j1
-    sources:
-      - type: archive
-        url: http://www-fourier.ujf-grenoble.fr/~parisse/giac/giac_stable.tgz
-        sha256: 035fab210ac0d455394466dbc8f0f38728ae52f6abe019b24a87499eb783967d
   - name: openblas-(macaulay2)
     buildsystem: cmake-ninja
     no-autogen: true
@@ -51,4 +43,13 @@ modules:
       - type: archive
         url: https://github.com/Macaulay2/M2/archive/refs/tags/release-1.24.11.tar.gz
         sha256: 6a0b4dfbb340d3ea71c8190b31fc806de76a2dcda458195f8aed4e3ef0d8be5d
+  - name: giac
+    buildsystem: autotools
+    make-args:
+      - -j1
+    sources:
+      - type: archive
+        url: http://www-fourier.ujf-grenoble.fr/~parisse/giac/giac_stable.tgz
+        sha256: 035fab210ac0d455394466dbc8f0f38728ae52f6abe019b24a87499eb783967d
+
 
