@@ -25,7 +25,7 @@ modules:
     sources:
       - type: archive
         url: http://www-fourier.ujf-grenoble.fr/~parisse/giac/giac_stable.tgz
-        sha256: 44430a2173c409d8df37872e8a94e0926d9be9134fb3faf11d543fbb37b33214
+        sha256: 035fab210ac0d455394466dbc8f0f38728ae52f6abe019b24a87499eb783967d
   - name: openblas-(macaulay2)
     buildsystem: cmake-ninja
     no-autogen: true
