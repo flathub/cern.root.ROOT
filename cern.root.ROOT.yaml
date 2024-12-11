@@ -18,19 +18,37 @@ finish-args:
   - --env=ROOTSYS=/app
   - --env=PATH=/var/data/python/bin:/app/bin:/usr/bin
 modules:
-  - name: root
+  - name: giac
+    buildsystem: autotools
+    make-args:
+      - -j1
+    sources:
+      - type: archive
+        url: http://www-fourier.ujf-grenoble.fr/~parisse/giac/giac_stable.tgz
+        sha256: 44430a2173c409d8df37872e8a94e0926d9be9134fb3faf11d543fbb37b33214
+  - name: openblas-(macaulay2)
+    buildsystem: cmake-ninja
+    no-autogen: true
+    make-args:
+      - DYNAMIC_ARCH=1
+      - DYNAMIC_OLDER=1
+      - FC=gfortran
+      - TARGET=GENERIC
+      - USE_OPENMP=0
+    make-install-args:
+      - PREFIX=${FLATPAK_DEST}
+    cleanup:
+      - /include/openblas
+    sources:
+      - type: archive
+        url: https://github.com/xianyi/OpenBLAS/releases/download/v0.3.28/OpenBLAS-0.3.28.tar.gz
+        sha256: f1003466ad074e9b0c8d421a204121100b0751c96fc6fcf3d1456bd12f8a00a1
+  - name: macaulay2
     buildsystem: cmake-ninja
     builddir: true
-    post-install:
-      - install -Dm644 ../icons/Root6Icon.png /app/share/icons/hicolor/128x128/apps/Root6Icon.png
-      - install -Dm644 ../cern.root.ROOT.appdata.xml /app/share/appdata/cern.root.ROOT.appdata.xml
-      - install -Dm644 ../etc/root.desktop /app/share/applications/root.desktop
-      - desktop-file-edit --set-key=Icon --set-value="Root6Icon" "${FLATPAK_DEST}/share/applications/root.desktop"
+    subdir: M2
     sources:
-      - type: git
-        url: https://github.com/root-project/root.git
-        tag: v6-32-08
-        commit: a1748a069d2d5f27ec528cfd89b54b12dcba793e
-      - type: file
-        path: cern.root.ROOT.appdata.xml
+      - type: archive
+        url: https://github.com/Macaulay2/M2/archive/refs/tags/release-1.24.11.tar.gz
+        sha256: 6a0b4dfbb340d3ea71c8190b31fc806de76a2dcda458195f8aed4e3ef0d8be5d
 
