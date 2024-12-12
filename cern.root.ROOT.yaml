@@ -43,6 +43,19 @@ modules:
       - type: archive
         url: https://github.com/Reference-LAPACK/lapack/archive/refs/tags/v3.12.0.tar.gz
         sha256: eac9570f8e0ad6f30ce4b963f4f033f0f643e7c3912fc9ee6cd99120675ad48b
+  - name: boost
+    buildsystem: simple
+    build-commands:
+      - ./bootstrap.sh --prefix=/app --with-libraries=system,iostreams,filesystem,thread,log,locale,regex,date_time
+      - ./b2 headers
+      - ./b2 -j$FLATPAK_BUILDER_N_JOBS install variant=release cxxstd=17 --layout=system
+    sources:
+      - type: archive
+        url: https://freefr.dl.sourceforge.net/project/boost/boost/1.78.0/boost_1_78_0.zip
+        sha256: f22143b5528e081123c3c5ed437e92f648fe69748e95fa6e2bd41484e2986cc3
+    cleanup:
+      - /include
+      - /lib/cmake
   - name: macaulay2
     buildsystem: cmake-ninja
     builddir: true
