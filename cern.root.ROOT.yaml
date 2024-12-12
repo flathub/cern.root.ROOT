@@ -20,15 +20,10 @@ finish-args:
 modules:
   - name: openblas-(macaulay2)
     buildsystem: cmake-ninja
-    no-autogen: true
-    make-args:
-      - DYNAMIC_ARCH=1
-      - DYNAMIC_OLDER=1
-      - FC=gfortran
-      - TARGET=GENERIC
-      - USE_OPENMP=0
-    make-install-args:
-      - PREFIX=${FLATPAK_DEST}
+    builddir: true
+    config-opts:
+      - -DBUILD_TESTING:BOOL=OFF
+      - -DDYNAMIC_ARCH:BOOL=ON
     cleanup:
       - /include/openblas
     sources:
