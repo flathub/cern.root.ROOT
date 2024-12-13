@@ -33,12 +33,6 @@ modules:
   - name: lapack #macaulay2
     buildsystem: cmake-ninja
     builddir: true
-    config-opts:
-      - -DCMAKE_BUILD_TYPE=RelWithDebInfo
-      - -DBUILD_SHARED_LIBS=ON
-      - -DBUILD_TESTING=OFF
-      - -DLAPACKE=ON
-      - -DCBLAS=ON
     sources:
       - type: archive
         url: https://github.com/Reference-LAPACK/lapack/archive/refs/tags/v3.12.0.tar.gz
