@@ -1,23 +1,29 @@
-app-id: cern.root.ROOT
-runtime: org.freedesktop.Sdk
-runtime-version: "23.08"
-sdk: org.freedesktop.Sdk
-command: root
-rename-desktop-file: root.desktop
-rename-icon: Root6Icon #128x128
-finish-args:
-  - --share=ipc
-  - --share=network
-  - --socket=x11
-  - --device=dri
-  - --filesystem=xdg-documents
-  - --persist=.
-  - --env=JUPYTER_CONFIG_DIR=/app/etc/notebook
-  - --env=JUPYTER_PATH=/app/etc/notebook
-  - --env=PYTHONPATH=/app/lib
-  - --env=ROOTSYS=/app
-  - --env=PATH=/var/data/python/bin:/app/bin:/usr/bin
+id: org.texmacs.TeXmacs.Plugin.Additional1
+runtime: org.texmacs.TeXmacs
+runtime-version: stable
+sdk: org.kde.Sdk//5.15-23.08
+base: io.qt.qtwebengine.BaseApp
+base-version: 5.15-23.08
+build-extension: true
+appstream-compose: false
+build-options:
+  prefix: /app/plugins/Additional1
+  prepend-path: /app/plugins/Additional1/bin
+  prepend-ld-library-path: /app/plugins/Additional1/lib
+  prepend-pkg-config-path: /app/plugins/Additional1/lib/pkgconfig
 modules:
+  - name: lapack #macaulay2
+    buildsystem: cmake-ninja
+    builddir: true
+    config-opts:
+      - -DBUILD_SHARED_LIBS=ON
+      - -DBUILD_TESTING=OFF
+      - -DLAPACKE=ON
+      - -DCBLAS=ON
+    sources:
+      - type: archive
+        url: https://github.com/Reference-LAPACK/lapack/archive/refs/tags/v3.12.0.tar.gz
+        sha256: eac9570f8e0ad6f30ce4b963f4f033f0f643e7c3912fc9ee6cd99120675ad48b
   - name: openblas #macaulay2
     buildsystem: cmake-ninja
     builddir: true
@@ -30,26 +36,6 @@ modules:
       - type: archive
         url: https://github.com/xianyi/OpenBLAS/releases/download/v0.3.28/OpenBLAS-0.3.28.tar.gz
         sha256: f1003466ad074e9b0c8d421a204121100b0751c96fc6fcf3d1456bd12f8a00a1
-  - name: lapack #macaulay2
-    buildsystem: cmake-ninja
-    builddir: true
-    sources:
-      - type: archive
-        url: https://github.com/Reference-LAPACK/lapack/archive/refs/tags/v3.12.0.tar.gz
-        sha256: eac9570f8e0ad6f30ce4b963f4f033f0f643e7c3912fc9ee6cd99120675ad48b
-  - name: boost
-    buildsystem: simple
-    build-commands:
-      - ./bootstrap.sh --prefix=/app --with-libraries=system,iostreams,filesystem,thread,log,locale,regex,date_time,stacktrace
-      - ./b2 headers
-      - ./b2 -j$FLATPAK_BUILDER_N_JOBS install variant=release cxxstd=17 --layout=system
-    sources:
-      - type: archive
-        url: https://freefr.dl.sourceforge.net/project/boost/boost/1.78.0/boost_1_78_0.zip
-        sha256: f22143b5528e081123c3c5ed437e92f648fe69748e95fa6e2bd41484e2986cc3
-    cleanup:
-      - /include
-      - /lib/cmake
   - name: macaulay2
     buildsystem: cmake-ninja
     builddir: true
@@ -60,11 +46,8 @@ modules:
         sha256: 6a0b4dfbb340d3ea71c8190b31fc806de76a2dcda458195f8aed4e3ef0d8be5d
   - name: giac
     buildsystem: autotools
-    make-args:
-      - -j1
     sources:
       - type: archive
-        url: http://www-fourier.ujf-grenoble.fr/~parisse/giac/giac_stable.tgz
+        url: https://www-fourier.ujf-grenoble.fr/~parisse/debian/dists/stable/main/source/giac_1.9.0-996.tar.gz
         sha256: 035fab210ac0d455394466dbc8f0f38728ae52f6abe019b24a87499eb783967d
-
-
+ 
