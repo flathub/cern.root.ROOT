@@ -18,7 +18,7 @@ finish-args:
   - --env=ROOTSYS=/app
   - --env=PATH=/var/data/python/bin:/app/bin:/usr/bin
 modules:
-   - name: lapack #macaulay2
+  - name: lapack #macaulay2
     buildsystem: cmake-ninja
     builddir: true
     config-opts:
