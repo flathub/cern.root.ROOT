@@ -18,6 +18,16 @@ finish-args:
   - --env=ROOTSYS=/app
   - --env=PATH=/var/data/python/bin:/app/bin:/usr/bin
 modules:
+  - name: boost #macaulay2
+    buildsystem: simple
+    buildcommands:
+      - ./bootstrap.sh --prefix=/app --with-libraries=locale,filesystem,system,date_time,regex,program_options
+      - ./b2 headers
+      - ./b2 -j$FLATPAK_BUILDER_N_JOBS install variant=release cxxstd=17 --layout=system
+    sources:
+      - type: archive
+        url: https://downloads.sourceforge.net/boost/boost/1.85.0/boost_1_85_0.tar.bz2
+        sha256: 7009fe1faa1697476bdc7027703a2badb84e849b7b0baad5086b087b971f8617
   - name: lapack #macaulay2
     buildsystem: cmake-ninja
     builddir: true
