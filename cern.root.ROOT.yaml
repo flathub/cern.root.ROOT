@@ -18,6 +18,15 @@ finish-args:
   - --env=ROOTSYS=/app
   - --env=PATH=/var/data/python/bin:/app/bin:/usr/bin
 modules:
+  - name: bbt #macaulay2
+    buildsystem: cmake-ninja
+    builddir: true
+    build-opts:
+      - -DTBB_TEST=OFF
+    sources:
+      - type: archive
+        url: https://github.com/oneapi-src/oneTBB/archive/refs/tags/v2022.0.0.tar.gz
+        sha256: e8e89c9c345415b17b30a2db3095ba9d47647611662073f7fbf54ad48b7f3c2a
   - name: boost #macaulay2
     buildsystem: simple
     build-commands:
