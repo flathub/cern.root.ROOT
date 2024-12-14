@@ -20,7 +20,7 @@ finish-args:
 modules:
   - name: boost #macaulay2
     buildsystem: simple
-    buildcommands:
+    build-commands:
       - ./bootstrap.sh --prefix=/app --with-libraries=locale,filesystem,system,date_time,regex,program_options
       - ./b2 headers
       - ./b2 -j$FLATPAK_BUILDER_N_JOBS install variant=release cxxstd=17 --layout=system
