@@ -30,22 +30,12 @@ modules:
       - type: archive
         url: https://github.com/Reference-LAPACK/lapack/archive/refs/tags/v3.12.0.tar.gz
         sha256: eac9570f8e0ad6f30ce4b963f4f033f0f643e7c3912fc9ee6cd99120675ad48b
-  - name: openblas #macaulay2
-    buildsystem: cmake-ninja
-    builddir: true
-    config-opts:
-      - -DBUILD_TESTING:BOOL=OFF
-      - -DDYNAMIC_ARCH:BOOL=ON
-    cleanup:
-      - /include/openblas
-    sources:
-      - type: archive
-        url: https://github.com/xianyi/OpenBLAS/releases/download/v0.3.28/OpenBLAS-0.3.28.tar.gz
-        sha256: f1003466ad074e9b0c8d421a204121100b0751c96fc6fcf3d1456bd12f8a00a1
   - name: macaulay2
     buildsystem: cmake-ninja
     builddir: true
     subdir: M2
+    config-opts:
+      - -DLAPACK_DIR "/app/lib"
     sources:
       - type: archive
         url: https://github.com/Macaulay2/M2/archive/refs/tags/release-1.24.11.tar.gz
