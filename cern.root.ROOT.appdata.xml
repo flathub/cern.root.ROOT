@@ -9,7 +9,7 @@
 	<p>
 	   Note: This package only contains root, to use other utilities 
 	   look in the manifest repository https://github.com/flathub/cern.root.ROOT. 
-	   The beta branch contains ROOT with SDK version 24.08.
+	   The beta branch contains ROOT with org.kde.Sdk//6.8.
 	</p>
 	<p>
 	    ROOT is a framework for data processing, developed at CERN,
@@ -58,6 +58,6 @@
         <content_attribute id="social-info">mild</content_attribute>
     </content_rating>
     <releases>
-	<release version="6.32.08" date="2024-11-14"></release>
+	<release version="6.32.10" date="2025-02-10"></release>
     </releases>
 </component>
