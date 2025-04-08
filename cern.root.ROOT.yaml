@@ -30,8 +30,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/root-project/root.git
-        tag: v6-32-10
-        commit: 28a45b686066b309e753c4a919d1c21f10aed528
+        tag: v6-32-12
+        commit: cb0780fba5c4ed74ef57fd0ab3b77d8a666383bc
       - type: file
         path: cern.root.ROOT.appdata.xml
 
