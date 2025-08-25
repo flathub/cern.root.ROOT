@@ -18,6 +18,14 @@ finish-args:
   - --env=ROOTSYS=/app
   - --env=PATH=/var/data/python/bin:/app/bin:/usr/bin
 modules:
+  - name: xrootd
+    buildsystem: cmake-ninja
+    builddir: true
+    sources:
+      - type: git
+        url: https://github.com/xrootd/xrootd.git
+        commit: 8ac19b1d2b74521acff9ed0200052a2e373092cc
+        tag: v5.8.4
   - name: root
     buildsystem: cmake-ninja
     builddir: true
@@ -30,8 +38,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/root-project/root.git
-        tag: v6-32-14
-        commit: 3ec9a05b644352c4da8bc7ce6c0d420cd6279172
+        tag: v6-36-04
+        commit: 138a77b57a19c8b25be565151168db4ed6321a4f
       - type: file
         path: cern.root.ROOT.appdata.xml
-
