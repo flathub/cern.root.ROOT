@@ -12,8 +12,8 @@ finish-args:
   - --device=dri
   - --filesystem=xdg-documents
   - --persist=.
-  - --env=JUPYTER_CONFIG_DIR=/app/etc/notebook
-  - --env=JUPYTER_PATH=/app/etc/notebook
+  - --env=JUPYTER_CONFIG_DIR=/var/data/notebook
+  - --env=JUPYTER_PATH=/var/data/notebook
   - --env=PYTHONPATH=/app/lib
   - --env=ROOTSYS=/app
   - --env=PATH=/var/data/python/bin:/app/bin:/usr/bin
