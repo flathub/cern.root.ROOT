@@ -1,6 +1,6 @@
 app-id: cern.root.ROOT
 runtime: org.freedesktop.Sdk
-runtime-version: "24.08"
+runtime-version: "25.08"
 sdk: org.freedesktop.Sdk
 command: root
 rename-desktop-file: root.desktop
