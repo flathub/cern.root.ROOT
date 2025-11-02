@@ -8,8 +8,7 @@
     <description>
 	<p>
 	   Note: This package only contains ROOT, to use other utilities 
-	   look in the manifest repository https://github.com/flathub/cern.root.ROOT. 
-	   The beta branch contains ROOT with org.kde.Sdk//6.8.
+	   look in the manifest repository https://github.com/flathub/cern.root.ROOT.
 	</p>
 	<p>
 	    ROOT is a framework for data processing, developed at CERN,
@@ -17,7 +16,7 @@
         extensive data using the mathematical and statistical methods 
         it provides, along with user-developed routines. The results 
         can be visually presented according to specific needs and 
-         exported to various formats such as PDF, PS, PNG, etc.
+        exported to various formats such as PDF, PS, PNG, etc.
 	</p>
     </description>
     <icon type="stock">cern.root.ROOT</icon>
