@@ -59,4 +59,11 @@
     <releases>
 	<release version="6.36.04" date="2025-08-25"></release>
     </releases>
+    <keywords>
+        <keyword>data analysis</keyword>
+        <keyword>scientific visualization</keyword>
+        <keyword>data processing</keyword>
+        <keyword>high-energy physics</keyword>
+        <keyword>data export</keyword>
+    </keywords>
 </component>
