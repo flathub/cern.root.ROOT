@@ -21,6 +21,8 @@ modules:
   - name: xrootd
     buildsystem: cmake-ninja
     builddir: true
+    config-opts:
+      - -DINSTALL_PYTHON_BINDINGS=OFF
     sources:
       - type: git
         url: https://github.com/xrootd/xrootd.git
