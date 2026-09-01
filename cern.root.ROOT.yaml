@@ -38,9 +38,8 @@ modules:
       - desktop-file-edit --set-key=Icon --set-value="Root6Icon" "${FLATPAK_DEST}/share/applications/root.desktop"
       - desktop-file-edit --set-key=Keywords --set-value="c++;fit;cern" "/app/share/applications/root.desktop"
     sources:
-      - type: git
-        url: https://github.com/root-project/root.git
-        tag: v6-36-12
-        commit: b93ac95e16faf1deaaac040bc81b27122cf1d8ba
+      - type: archive
+        url: https://github.com/root-project/root/releases/download/v6-36-14/root_v6.36.14.source.tar.gz
+        sha256: d45af0b98c121a1f03ad7f6069ef660da758d7eea519e24ad788768d58805284
       - type: file
         path: cern.root.ROOT.appdata.xml
